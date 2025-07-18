@@ -1,19 +1,11 @@
 
 class Node:
-    """
-    A Node class to store integer data and a reference to the next node.
-    """
-
     def __init__(self, data):
         self.data = data
         self.next = None
 
 
 class LinkedList:
-    """
-    A singly linked list that holds Node objects and performs operations using recursion.
-    """
-
     def __init__(self):
         self.head = None
 
@@ -23,7 +15,15 @@ class LinkedList:
         self.head = new_node
 
     def insert_at_end(self, data):
+        new_node = Node(data)
+        if not self.head:
+            self.head = new_node
+            return
         
+        current = self.head
+        while current.next:
+            current = current.next
+        current.next = new_node
 
     def recursive_sum(self):
         """
