@@ -19,22 +19,17 @@ class LinkedList:
         if not self.head:
             self.head = new_node
             return
-        
         current = self.head
         while current.next:
             current = current.next
         current.next = new_node
 
     def recursive_sum(self):
-        """
-        TODO:
-        - Use recursion to sum all node data in the list.
-        - Consider a helper function that:
-          1. Checks if the current node is None, and returns 0 if so.
-          2. Otherwise, returns node.data + recursive call on node.next.
-        - Return the total sum.
-        """
-        pass
+        def helper(node):
+            if node is None:
+                return 0
+            return node.data + helper(node.next)
+        return helper(self.head)    
 
     def recursive_reverse(self):
         """
@@ -67,9 +62,10 @@ class LinkedList:
         print("None")
 
 ll = LinkedList()
-ll.insert_at_front("Node A")
-ll.insert_at_front("Node B")
-ll.insert_at_end("Node C")
+ll.insert_at_front(1)
+ll.insert_at_front(3)
+ll.insert_at_end(2)
 
 ll.display()
+ll.recursive_sum()
 
