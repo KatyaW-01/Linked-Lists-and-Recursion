@@ -32,15 +32,6 @@ class LinkedList:
         return helper(self.head)    
 
     def recursive_reverse(self):
-        """
-        TODO:
-        - Reverse the list in-place using recursion.
-        - Possible approach:
-          1. Use a helper function that accepts 'prev' and 'current'.
-          2. Base case: if current is None, return 'prev' (new head).
-          3. Otherwise, swap pointers and recurse.
-        - Update 'head' to the returned new head.
-        """
         def helper(prev,current):
             if current is None:
                 return prev
@@ -51,14 +42,6 @@ class LinkedList:
             
 
     def recursive_search(self, target):
-        """
-        TODO:
-        - Return True if 'target' is found, otherwise False, using recursion.
-        - Consider a helper function that:
-          1. Returns False if the current node is None.
-          2. Returns True if current node's data == target.
-          3. Otherwise, recurse on the next node.
-        """
         def helper(node):
             if node is None:
                 return False
