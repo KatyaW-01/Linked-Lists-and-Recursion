@@ -5,12 +5,8 @@ class Node:
     """
 
     def __init__(self, data):
-        """
-        TODO:
-        - Assign the provided 'data' to an instance variable.
-        - Initialize 'next' to None.
-        """
-        pass
+        self.data = data
+        self.next = None
 
 
 class LinkedList:
