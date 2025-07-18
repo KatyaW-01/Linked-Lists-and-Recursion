@@ -60,10 +60,16 @@ class LinkedList:
         pass
 
     def display(self):
-        """
-        TODO:
-        - Print the contents of the list for debugging.
-        - Traverse from 'head' and collect each node's data.
-        - Format output as 'val -> val -> val -> None' or similar.
-        """
-        pass
+        current = self.head
+        while current:
+            print(current.data, end=" -> ")
+            current = current.next
+        print("None")
+
+ll = LinkedList()
+ll.insert_at_front("Node A")
+ll.insert_at_front("Node B")
+ll.insert_at_end("Node C")
+
+ll.display()
+
